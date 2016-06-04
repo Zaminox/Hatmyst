@@ -9,6 +9,7 @@ public abstract class Command {
 	protected String help, prefix, command;
 	
 	public Command(Utils utils, String help, String prefix, String command) {
+		this.utils = utils;
 		this.help = help;
 		this.prefix = prefix;
 		this.command = command;

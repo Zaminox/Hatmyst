@@ -1,7 +1,7 @@
 package fr.zaminox;
 
 import sx.blah.discord.api.IDiscordClient;
-import sx.blah.discord.handle.obj.IChannel;
+import sx.blah.discord.handle.obj.IGuild;
 import sx.blah.discord.handle.obj.IUser;
 
 public class Utils {
@@ -13,7 +13,7 @@ public class Utils {
 	}
 	
 	public IUser getUserByName(String name) {
-		for(IChannel channel : client.getChannels(false)) for(IUser user : channel.getUsersHere()) if(user.getName().equalsIgnoreCase(name)) return user;
+		for(IGuild guild : client.getGuilds()) for(IUser user : guild.getUsers()) if(user.getName().equalsIgnoreCase(name)) return user;
 		
 		return null;
 	}

@@ -14,6 +14,10 @@ public class Move {
 		this.type = type;
 	}
 	
+	public String getName() {
+		return name;
+	}
+	
 	public int getDamage() {
 		return damage;
 	}

@@ -1,15 +1,14 @@
 package fr.zaminox;
 
 import sx.blah.discord.api.EventSubscriber;
-import sx.blah.discord.api.IDiscordClient;
 import sx.blah.discord.handle.impl.events.MessageReceivedEvent;
 
 public class GeneralEvents {
 	
-	private IDiscordClient client;
+	private Utils utils;
 	
-	public GeneralEvents(IDiscordClient client) {
-		this.client = client;
+	public GeneralEvents(Utils utils) {
+		this.utils = utils;
 	}
 	
 	@EventSubscriber

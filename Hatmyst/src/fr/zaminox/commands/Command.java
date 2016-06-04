@@ -1,18 +1,20 @@
 package fr.zaminox.commands;
 
+import fr.zaminox.Utils;
 import sx.blah.discord.handle.impl.events.MessageReceivedEvent;
 
 public abstract class Command {
 	
-	private String help, prefix, command;
+	protected Utils utils;
+	protected String help, prefix, command;
 	
-	public Command(String help, String prefix, String command) {
+	public Command(Utils utils, String help, String prefix, String command) {
 		this.help = help;
 		this.prefix = prefix;
 		this.command = command;
 	}
 	
-	public abstract void onCommand(MessageReceivedEvent e) throws Exception;
+	public abstract void onCommand(MessageReceivedEvent e, String[] args) throws Exception;
 
 	public String getHelp() {
 		return help;
